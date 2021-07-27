@@ -39,6 +39,7 @@ namespace HangMan
             this.nintendoCount = new System.Windows.Forms.Label();
             this.rWord = new System.Windows.Forms.Label();
             this.isIt = new System.Windows.Forms.Label();
+            this.won = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // letterBox
@@ -124,11 +125,20 @@ namespace HangMan
             this.isIt.TabIndex = 9;
             this.isIt.Text = "label1";
             // 
+            // won
+            // 
+            this.won.AutoSize = true;
+            this.won.Location = new System.Drawing.Point(292, 45);
+            this.won.Name = "won";
+            this.won.Size = new System.Drawing.Size(0, 15);
+            this.won.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.won);
             this.Controls.Add(this.isIt);
             this.Controls.Add(this.rWord);
             this.Controls.Add(this.nintendoCount);
@@ -159,6 +169,7 @@ namespace HangMan
         private System.Windows.Forms.Label nintendoCount;
         private System.Windows.Forms.Label rWord;
         private System.Windows.Forms.Label isIt;
+        private System.Windows.Forms.Label won;
     }
 }
 

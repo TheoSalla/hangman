@@ -8,6 +8,7 @@ namespace HangMan
 {
     class GamePlan
     {
+        public float staringPoint { get; private set; }
         public GamePlan(string word,  PaintEventArgs e)
         {
             generateGamePlan(word, e);
@@ -25,6 +26,7 @@ namespace HangMan
             // Pen blackPen = new Pen(Color.Black, 3);
             // e.Graphics.DrawLine(blackPen, x1, y1, x2, y2);
 
+            staringPoint = placementX2;
 
             for (int i = 0; i < word.Length; i++)
             {

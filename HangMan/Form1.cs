@@ -17,23 +17,28 @@ namespace HangMan
             InitializeComponent();
             this.Width = 600;
             this.Height = 600;
-            Word word = new Word();
+            word = new Word();
             rightWord = word.word.ToLower();
             wrongX = 150.0F;
             guesses = new List<string>();
-     
 
+        
+           
             this.BackColor = Color.Bisque;
         }
 
+
+        int rightPlace = 0;
         string rightWord;
         float wrongX;
         List<string> guesses;
+        Word word;
+        GamePlan gamePlan;
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             rWord.Text = rightWord;
-            GamePlan gamePlan = new GamePlan(rightWord ,e);
+            gamePlan = new GamePlan(rightWord ,e);
 
            
 
@@ -41,6 +46,8 @@ namespace HangMan
 
         private void guessLetter_Click(object sender, EventArgs e)
         {
+
+
             if (guesses.Contains(letterBox.Text.ToLower()))
             {
                 isIt.Text = "You already guessed that!";
@@ -50,9 +57,9 @@ namespace HangMan
             {
                 isIt.Text = "You got it!";
             }
-            else if (letterBox.Text.Length > 1)
+            else if (letterBox.Text.Length > 1 || letterBox.Text.Length <= 0)
             {
-                isIt.Text = "Only one letter or the whole world please!";
+                isIt.Text = "One letter or the whole word please!";
             }
             else
             {
@@ -60,6 +67,7 @@ namespace HangMan
                 {
                     guesses.Add(letterBox.Text.ToLower());
                     isIt.Text = "Yes!";
+                
                     rightLetter();
 
                 }
@@ -70,13 +78,20 @@ namespace HangMan
                     wrongLetter();
                 }
             }
+            won.Text = rightPlace.ToString();
+            if (rightPlace == rightWord.Length)
+            {
+                won.Text = "Bingo! You won :)";
+            }
 
+            letterBox.Text = "";
 
         
         }
 
         private void rightLetter()
         {
+            
             Graphics myGraphics = CreateGraphics();
 
             // Create string to draw.
@@ -87,9 +102,23 @@ namespace HangMan
             SolidBrush drawBrush = new SolidBrush(Color.Black);
 
             // Create point for upper-left corner of drawing.
+            //float x = 190.0F;
             float x = 190.0F;
             float y = 260.0F;
-            myGraphics.DrawString(guess, drawFont, drawBrush, x, y);
+
+            for (int i = 0; i < rightWord.Length; i++)
+            {
+                if (letterBox.Text == rightWord[i].ToString())
+                {
+                    rightPlace++;
+                    isIt.Text = "Yes its a match!";
+                    x = (gamePlan.staringPoint) + (i * 40);
+                    myGraphics.DrawString(guess, drawFont, drawBrush, x, y);
+
+                }
+            }
+
+        
     
         }
         private void wrongLetter()
