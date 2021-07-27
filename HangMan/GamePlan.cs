@@ -16,7 +16,7 @@ namespace HangMan
         void generateGamePlan(string word, PaintEventArgs e)
         {
             float count = word.Length / 2 * 20;
-            float placementX1 = 250 - count;
+            float placementX1 = 245 - count;
             float placementX2 = 220 - count;
             float y1 = 290;
             float y2 = 290;

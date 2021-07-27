@@ -38,18 +38,19 @@ namespace HangMan
             this.atariCount = new System.Windows.Forms.Label();
             this.nintendoCount = new System.Windows.Forms.Label();
             this.rWord = new System.Windows.Forms.Label();
+            this.isIt = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // letterBox
             // 
-            this.letterBox.Location = new System.Drawing.Point(43, 59);
+            this.letterBox.Location = new System.Drawing.Point(43, 394);
             this.letterBox.Name = "letterBox";
             this.letterBox.Size = new System.Drawing.Size(70, 23);
             this.letterBox.TabIndex = 0;
             // 
             // guessLetter
             // 
-            this.guessLetter.Location = new System.Drawing.Point(119, 59);
+            this.guessLetter.Location = new System.Drawing.Point(104, 394);
             this.guessLetter.Name = "guessLetter";
             this.guessLetter.Size = new System.Drawing.Size(75, 23);
             this.guessLetter.TabIndex = 1;
@@ -114,11 +115,21 @@ namespace HangMan
             this.rWord.TabIndex = 8;
             this.rWord.Text = "label1";
             // 
+            // isIt
+            // 
+            this.isIt.AutoSize = true;
+            this.isIt.Location = new System.Drawing.Point(118, 36);
+            this.isIt.Name = "isIt";
+            this.isIt.Size = new System.Drawing.Size(38, 15);
+            this.isIt.TabIndex = 9;
+            this.isIt.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.isIt);
             this.Controls.Add(this.rWord);
             this.Controls.Add(this.nintendoCount);
             this.Controls.Add(this.atariCount);
@@ -147,6 +158,7 @@ namespace HangMan
         private System.Windows.Forms.Label atariCount;
         private System.Windows.Forms.Label nintendoCount;
         private System.Windows.Forms.Label rWord;
+        private System.Windows.Forms.Label isIt;
     }
 }
 
