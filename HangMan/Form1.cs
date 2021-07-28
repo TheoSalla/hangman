@@ -18,14 +18,7 @@ namespace HangMan
             InitializeComponent();
             SetUpGame();
         }
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-=======
-
->>>>>>> newbranch
-=======
->>>>>>> newbranch
         string alph;
         int wrongGuesses;
         HangManFigures hangMan;
@@ -61,11 +54,7 @@ namespace HangMan
             {
                 MessageBox.Show("You already guessed that!");
                 
-<<<<<<< HEAD
-
-=======
->>>>>>> newbranch
-            }
+}
             //If the right word is entered
            else if (letterBox.Text == rightWord)
             {
@@ -75,11 +64,6 @@ namespace HangMan
                 MessageBox.Show("You won!");
                 PlayAgain();
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> newbranch
             }
             else if (letterBox.Text.Length > 1 || letterBox.Text.Length <= 0 || !isLetter)
             {
@@ -267,10 +251,6 @@ namespace HangMan
             wrongX += 20;
 
         }
-<<<<<<< HEAD
 
-       
-=======
->>>>>>> newbranch
     }
 }
