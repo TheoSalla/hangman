@@ -17,6 +17,7 @@ namespace HangMan
             InitializeComponent();
             this.Width = 600;
             this.Height = 600;
+            
             word = new Word();
             rightWord = word.word.ToLower();
             wrongX = 150.0F;
