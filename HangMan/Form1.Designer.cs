@@ -42,18 +42,19 @@ namespace HangMan
 =======
 >>>>>>> newbranch
             this.won = new System.Windows.Forms.Label();
+            this.wrongBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // letterBox
             // 
-            this.letterBox.Location = new System.Drawing.Point(268, 431);
+            this.letterBox.Location = new System.Drawing.Point(268, 403);
             this.letterBox.Name = "letterBox";
             this.letterBox.Size = new System.Drawing.Size(70, 23);
             this.letterBox.TabIndex = 0;
             // 
             // guessLetter
             // 
-            this.guessLetter.Location = new System.Drawing.Point(268, 460);
+            this.guessLetter.Location = new System.Drawing.Point(268, 432);
             this.guessLetter.Name = "guessLetter";
             this.guessLetter.Size = new System.Drawing.Size(70, 23);
             this.guessLetter.TabIndex = 1;
@@ -127,6 +128,14 @@ namespace HangMan
             this.won.Size = new System.Drawing.Size(100, 23);
             this.won.TabIndex = 0;
             // 
+            // wrongBar
+            // 
+            this.wrongBar.Location = new System.Drawing.Point(26, 30);
+            this.wrongBar.Name = "wrongBar";
+            this.wrongBar.Size = new System.Drawing.Size(141, 23);
+            this.wrongBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.wrongBar.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -134,6 +143,7 @@ namespace HangMan
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.wrongBar);
             this.Controls.Add(this.won);
 <<<<<<< HEAD
             this.Controls.Add(this.rWord);
@@ -175,6 +185,7 @@ namespace HangMan
 
 >>>>>>> newbranch
         private System.Windows.Forms.Label won;
+        private System.Windows.Forms.ProgressBar wrongBar;
     }
 }
 

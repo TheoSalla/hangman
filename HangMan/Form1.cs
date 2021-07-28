@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,12 +17,14 @@ namespace HangMan
         {
             InitializeComponent();
             SetUpGame();
-
         }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
 
+>>>>>>> newbranch
+=======
 >>>>>>> newbranch
         string alph;
         int wrongGuesses;
@@ -37,29 +40,21 @@ namespace HangMan
         
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            //Graphics myGraphics = this.CreateGraphics();
-            //Pen blackPen = new Pen(Color.Black, 3);
-
-            //// Create coordinates of points that define line.
-            ////int x1 = 265;
-            //int x1 = 299;
-            //int y1 = 0;
-            //int x2 = 301;
-            ////int x2 = 265;
-            //int y2 = 600;
-
-            //// Draw line to screen.
-            //myGraphics.DrawLine(blackPen, x1, y1, x2, y2);
-
-
-
+          
             gamePlan = new GamePlan(rightWord ,e);
+           
         }
+
+
 
 
         //Method for the entered Letter
         private void guessLetter_Click(object sender, EventArgs e)
         {
+
+         
+
+
             bool isLetter = alph.Contains(letterBox.Text.ToLower());
             //If the letter have been already entered before
             if (guesses.Contains(letterBox.Text.ToLower()))
@@ -107,7 +102,22 @@ namespace HangMan
                 }
                 else
                 {
-                    wrongGuesses++;
+                    wrongBar.Value += 1;
+                    switch (wrongBar.Value)
+                    {
+                        case 1:
+                            wrongBar.ForeColor = Color.Green;
+                            break;
+                        case 4:
+                            wrongBar.ForeColor = Color.Yellow;
+                            break;
+                        case 8:
+                            wrongBar.ForeColor = Color.Red;
+                            break;
+                    }
+
+
+                    wrongGuesses++;                   
                     guesses.Add(letterBox.Text.ToLower());
                     wrongLetter();
 
@@ -163,19 +173,25 @@ namespace HangMan
 
         private void SetUpGame()
         {
+          
+            wrongBar.BackColor = Color.Black;
+            wrongBar.Value = 0;
+            wrongBar.Maximum = 10;
+            wrongBar.Step = 1;
             this.Width = 600;
             this.Height = 600;
 
             word = new Word();
             rightWord = word.word.ToLower();
-            wrongX = 150.0F;
+            wrongX = 25.0F;
+            
             guesses = new List<string>();
 
             hangMan = new HangManFigures();
 
             wrongGuesses = 0;
             righgtGusses = 0;
-            this.BackColor = Color.Bisque;
+            this.BackColor = Color.Gray;
             this.AcceptButton = guessLetter;
             this.Refresh();
             letterBox.Focus();
@@ -246,9 +262,9 @@ namespace HangMan
 
             // Create point for upper-left corner of drawing.
             float x = wrongX;
-            float y = 370.0F;
+            float y = 60.0F;
             myGraphics.DrawString(guess, drawFont, drawBrush, x, y);
-            wrongX += 15;
+            wrongX += 20;
 
         }
 <<<<<<< HEAD
