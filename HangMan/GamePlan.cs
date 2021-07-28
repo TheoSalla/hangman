@@ -19,8 +19,8 @@ namespace HangMan
             float count = word.Length / 2 * 20;
             float placementX1 = 245 - count;
             float placementX2 = 220 - count;
-            float y1 = 290;
-            float y2 = 290;
+            float y1 = 360;
+            float y2 = 360;
             //int x1 = 250;
             //int x2 = 220;
             // Pen blackPen = new Pen(Color.Black, 3);

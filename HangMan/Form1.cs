@@ -23,12 +23,13 @@ namespace HangMan
             wrongX = 150.0F;
             guesses = new List<string>();
 
+            hangMan = new HangManFigures();
         
            
             this.BackColor = Color.Bisque;
         }
 
-
+        HangManFigures hangMan;
         int rightPlace = 0;
         string rightWord;
         float wrongX;
@@ -38,12 +39,15 @@ namespace HangMan
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+
             rWord.Text = rightWord;
             gamePlan = new GamePlan(rightWord ,e);
 
            
 
         }
+
+
 
         private void guessLetter_Click(object sender, EventArgs e)
         {
@@ -139,7 +143,56 @@ namespace HangMan
 
         }
 
-      
-   
+        static int coun= 0;
+
+        private void hangButton_Click(object sender, EventArgs e)
+        {
+            switch (coun)
+            {
+                case 0:
+                    hangMan.Ground(this);
+                    break;
+                case 1:
+                    hangMan.Stump(this);
+                    break;
+                case 2:
+                    hangMan.Pile(this);
+                    break;
+                case 3:
+                    hangMan.Twig(this);
+                    break;
+                case 4:
+                    hangMan.Rope(this);
+                    break;
+                case 5:
+                    hangMan.Head(this);
+                    break;
+                case 6:
+                    hangMan.Body(this);
+                    break;
+                case 7:
+                    hangMan.Arms(this);
+                    break;
+                case 8:
+                    hangMan.LeftLeg(this);
+                    break;
+                case 9:
+                    hangMan.RightLeg(this);
+                    break;
+               
+            }
+            coun++;
+            //hangMan.Ground(this);
+            //hangMan.Stump(this);
+            //hangMan.Pile(this);
+            //hangMan.Twig(this);
+            //hangMan.Rope(this);
+            //hangMan.Head(this);
+            //hangMan.Body(this);
+            //hangMan.Arms(this);
+            //hangMan.LeftLeg(this);
+            //hangMan.RightLeg(this);
+
+        }
     }
 }

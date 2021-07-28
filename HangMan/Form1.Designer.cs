@@ -40,6 +40,7 @@ namespace HangMan
             this.rWord = new System.Windows.Forms.Label();
             this.isIt = new System.Windows.Forms.Label();
             this.won = new System.Windows.Forms.Label();
+            this.hangButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // letterBox
@@ -133,12 +134,23 @@ namespace HangMan
             this.won.Size = new System.Drawing.Size(0, 15);
             this.won.TabIndex = 10;
             // 
+            // hangButton
+            // 
+            this.hangButton.Location = new System.Drawing.Point(373, 393);
+            this.hangButton.Name = "hangButton";
+            this.hangButton.Size = new System.Drawing.Size(75, 23);
+            this.hangButton.TabIndex = 11;
+            this.hangButton.Text = "Click";
+            this.hangButton.UseVisualStyleBackColor = true;
+            this.hangButton.Click += new System.EventHandler(this.hangButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.hangButton);
             this.Controls.Add(this.won);
             this.Controls.Add(this.isIt);
             this.Controls.Add(this.rWord);
@@ -171,6 +183,7 @@ namespace HangMan
         private System.Windows.Forms.Label rWord;
         private System.Windows.Forms.Label isIt;
         private System.Windows.Forms.Label won;
+        private System.Windows.Forms.Button hangButton;
     }
 }
 
