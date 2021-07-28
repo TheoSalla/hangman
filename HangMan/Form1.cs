@@ -27,6 +27,7 @@ namespace HangMan
         
            
             this.BackColor = Color.Bisque;
+            this.AcceptButton = guessLetter;
         }
 
         HangManFigures hangMan;
@@ -42,9 +43,6 @@ namespace HangMan
 
             rWord.Text = rightWord;
             gamePlan = new GamePlan(rightWord ,e);
-
-           
-
         }
 
 
@@ -182,16 +180,6 @@ namespace HangMan
                
             }
             coun++;
-            //hangMan.Ground(this);
-            //hangMan.Stump(this);
-            //hangMan.Pile(this);
-            //hangMan.Twig(this);
-            //hangMan.Rope(this);
-            //hangMan.Head(this);
-            //hangMan.Body(this);
-            //hangMan.Arms(this);
-            //hangMan.LeftLeg(this);
-            //hangMan.RightLeg(this);
 
         }
     }

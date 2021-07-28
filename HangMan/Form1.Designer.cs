@@ -45,14 +45,14 @@ namespace HangMan
             // 
             // letterBox
             // 
-            this.letterBox.Location = new System.Drawing.Point(43, 394);
+            this.letterBox.Location = new System.Drawing.Point(222, 445);
             this.letterBox.Name = "letterBox";
             this.letterBox.Size = new System.Drawing.Size(70, 23);
             this.letterBox.TabIndex = 0;
             // 
             // guessLetter
             // 
-            this.guessLetter.Location = new System.Drawing.Point(104, 394);
+            this.guessLetter.Location = new System.Drawing.Point(292, 445);
             this.guessLetter.Name = "guessLetter";
             this.guessLetter.Size = new System.Drawing.Size(75, 23);
             this.guessLetter.TabIndex = 1;
