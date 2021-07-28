@@ -48,6 +48,11 @@ namespace HangMan
                 placementX1 += 30;
                 placementX2 += 30;
 
+                if (i == word.Length - 1)
+                {
+                    break;
+                }
+
                 Pen space = new Pen(Color.Bisque, 3);
                 placementX1 += 10;
                 placementX2 += 10;
