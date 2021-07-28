@@ -17,8 +17,10 @@ namespace HangMan
         void generateGamePlan(string word, PaintEventArgs e)
         {
             float count = word.Length / 2 * 20;
-            float placementX1 = 245 - count;
-            float placementX2 = 220 - count;
+            //float placementX1 = 245 - count;
+            //float placementX2 = 220 - count;
+            float placementX1 = 260 - count;
+            float placementX2 = 235 - count;
             float y1 = 360;
             float y2 = 360;
             //int x1 = 250;
@@ -32,7 +34,7 @@ namespace HangMan
             {
                 float x1 = placementX1;
                 float x2 = placementX2;
-                Pen blackPen = new Pen(Color.Blue, 3);
+                Pen blackPen = new Pen(Color.Black, 3);
                 e.Graphics.DrawLine(blackPen, x1, y1, x2, y2);
                 placementX1 += 30;
                 placementX2 += 30;
