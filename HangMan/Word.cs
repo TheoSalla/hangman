@@ -12,11 +12,12 @@ namespace HangMan
 
         public Word()
         {
+
             words = new List<string>();
             generateWord();    
         }
 
-        void generateWord()
+        private void generateWord()
         {
             words.Add("Sega");
             words.Add("Apple");
@@ -30,7 +31,7 @@ namespace HangMan
             int num = rng.Next(n);
 
             word = words[num];
-
+           
         }
     }
 }

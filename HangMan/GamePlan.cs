@@ -16,19 +16,28 @@ namespace HangMan
 
         void generateGamePlan(string word, PaintEventArgs e)
         {
-            float count = word.Length / 2 * 20;
-            //float placementX1 = 245 - count;
-            //float placementX2 = 220 - count;
-            float placementX1 = 260 - count;
-            float placementX2 = 235 - count;
+            float count;
+            float placementX1;
+            float placementX2;
+
+            if(word.Length % 2 == 1)
+            {
+                count = word.Length / 2 * 40;
+                placementX1 = 283 - count;
+                placementX2 = 313 - count;
+            }
+            else
+            {
+                count = word.Length / 2 * 40;
+                placementX1 = 305 - count;
+                placementX2 = 335 - count;
+            }
+
+
             float y1 = 360;
             float y2 = 360;
-            //int x1 = 250;
-            //int x2 = 220;
-            // Pen blackPen = new Pen(Color.Black, 3);
-            // e.Graphics.DrawLine(blackPen, x1, y1, x2, y2);
 
-            staringPoint = placementX2;
+            staringPoint = placementX2 - 25;
 
             for (int i = 0; i < word.Length; i++)
             {

@@ -31,6 +31,7 @@ namespace HangMan
         {
             this.letterBox = new System.Windows.Forms.TextBox();
             this.guessLetter = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.segaCount = new System.Windows.Forms.Label();
             this.appleCount = new System.Windows.Forms.Label();
             this.microsoftCount = new System.Windows.Forms.Label();
@@ -38,19 +39,21 @@ namespace HangMan
             this.atariCount = new System.Windows.Forms.Label();
             this.nintendoCount = new System.Windows.Forms.Label();
             this.rWord = new System.Windows.Forms.Label();
+=======
+>>>>>>> newbranch
             this.won = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // letterBox
             // 
-            this.letterBox.Location = new System.Drawing.Point(250, 431);
+            this.letterBox.Location = new System.Drawing.Point(268, 431);
             this.letterBox.Name = "letterBox";
             this.letterBox.Size = new System.Drawing.Size(70, 23);
             this.letterBox.TabIndex = 0;
             // 
             // guessLetter
             // 
-            this.guessLetter.Location = new System.Drawing.Point(250, 460);
+            this.guessLetter.Location = new System.Drawing.Point(268, 460);
             this.guessLetter.Name = "guessLetter";
             this.guessLetter.Size = new System.Drawing.Size(70, 23);
             this.guessLetter.TabIndex = 1;
@@ -58,6 +61,7 @@ namespace HangMan
             this.guessLetter.UseVisualStyleBackColor = true;
             this.guessLetter.Click += new System.EventHandler(this.guessLetter_Click);
             // 
+<<<<<<< HEAD
             // segaCount
             // 
             this.segaCount.AutoSize = true;
@@ -114,21 +118,24 @@ namespace HangMan
             this.rWord.Size = new System.Drawing.Size(0, 15);
             this.rWord.TabIndex = 8;
             // 
+=======
+>>>>>>> newbranch
             // won
             // 
-            this.won.AutoSize = true;
-            this.won.Location = new System.Drawing.Point(292, 45);
+            this.won.Location = new System.Drawing.Point(0, 0);
             this.won.Name = "won";
-            this.won.Size = new System.Drawing.Size(0, 15);
-            this.won.TabIndex = 10;
+            this.won.Size = new System.Drawing.Size(100, 23);
+            this.won.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(this.won);
+<<<<<<< HEAD
             this.Controls.Add(this.rWord);
             this.Controls.Add(this.nintendoCount);
             this.Controls.Add(this.atariCount);
@@ -136,11 +143,15 @@ namespace HangMan
             this.Controls.Add(this.microsoftCount);
             this.Controls.Add(this.appleCount);
             this.Controls.Add(this.segaCount);
+=======
+>>>>>>> newbranch
             this.Controls.Add(this.guessLetter);
             this.Controls.Add(this.letterBox);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hang Man!";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.ResumeLayout(false);
@@ -152,6 +163,7 @@ namespace HangMan
 
         private System.Windows.Forms.TextBox letterBox;
         private System.Windows.Forms.Button guessLetter;
+<<<<<<< HEAD
         private System.Windows.Forms.Label segaCount;
         private System.Windows.Forms.Label appleCount;
         private System.Windows.Forms.Label microsoftCount;
@@ -159,6 +171,9 @@ namespace HangMan
         private System.Windows.Forms.Label atariCount;
         private System.Windows.Forms.Label nintendoCount;
         private System.Windows.Forms.Label rWord;
+=======
+
+>>>>>>> newbranch
         private System.Windows.Forms.Label won;
     }
 }

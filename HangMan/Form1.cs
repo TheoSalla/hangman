@@ -19,6 +19,10 @@ namespace HangMan
 
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> newbranch
         string alph;
         int wrongGuesses;
         HangManFigures hangMan;
@@ -33,8 +37,22 @@ namespace HangMan
         
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            //Graphics myGraphics = this.CreateGraphics();
+            //Pen blackPen = new Pen(Color.Black, 3);
 
-            //rWord.Text = rightWord;
+            //// Create coordinates of points that define line.
+            ////int x1 = 265;
+            //int x1 = 299;
+            //int y1 = 0;
+            //int x2 = 301;
+            ////int x2 = 265;
+            //int y2 = 600;
+
+            //// Draw line to screen.
+            //myGraphics.DrawLine(blackPen, x1, y1, x2, y2);
+
+
+
             gamePlan = new GamePlan(rightWord ,e);
         }
 
@@ -48,7 +66,10 @@ namespace HangMan
             {
                 MessageBox.Show("You already guessed that!");
                 
+<<<<<<< HEAD
 
+=======
+>>>>>>> newbranch
             }
             //If the right word is entered
            else if (letterBox.Text == rightWord)
@@ -59,8 +80,11 @@ namespace HangMan
                 MessageBox.Show("You won!");
                 PlayAgain();
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> newbranch
             }
             else if (letterBox.Text.Length > 1 || letterBox.Text.Length <= 0 || !isLetter)
             {
@@ -72,7 +96,6 @@ namespace HangMan
                 if (rightWord.ToLower().Contains(letterBox.Text.ToLower()))
                 {
                     guesses.Add(letterBox.Text.ToLower());
-                    //isIt.Text = "Yes!";
                 
                     rightLetter();
                     if (righgtGusses == rightWord.Length)
@@ -86,7 +109,6 @@ namespace HangMan
                 {
                     wrongGuesses++;
                     guesses.Add(letterBox.Text.ToLower());
-                    //isIt.Text = "Nope!";
                     wrongLetter();
 
                     switch (coun)
@@ -207,17 +229,11 @@ namespace HangMan
                     x = (gamePlan.staringPoint) + (i * 40);
                     myGraphics.DrawString(guess[count].ToString(), drawFont, drawBrush, x, y);
                    
-
-                    }
-                    
+                    }                 
                 }
                 count--;
-
             }
            
-          
-
-
         }
         private void wrongLetter()
         {
@@ -235,7 +251,10 @@ namespace HangMan
             wrongX += 15;
 
         }
+<<<<<<< HEAD
 
        
+=======
+>>>>>>> newbranch
     }
 }
