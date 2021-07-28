@@ -15,21 +15,12 @@ namespace HangMan
         public Form1()
         {
             InitializeComponent();
-            this.Width = 600;
-            this.Height = 600;
-            
-            word = new Word();
-            rightWord = word.word.ToLower();
-            wrongX = 150.0F;
-            guesses = new List<string>();
+            SetUpGame();
 
-            hangMan = new HangManFigures();
-        
-           
-            this.BackColor = Color.Bisque;
-            this.AcceptButton = guessLetter;
         }
 
+        string alph;
+        int wrongGuesses;
         HangManFigures hangMan;
         int rightPlace = 0;
         string rightWord;
@@ -37,7 +28,9 @@ namespace HangMan
         List<string> guesses;
         Word word;
         GamePlan gamePlan;
-
+        static int righgtGusses;
+        static int coun;
+        
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -49,22 +42,29 @@ namespace HangMan
         //Method for the entered Letter
         private void guessLetter_Click(object sender, EventArgs e)
         {
-
+            bool isLetter = alph.Contains(letterBox.Text.ToLower());
             //If the letter have been already entered before
             if (guesses.Contains(letterBox.Text.ToLower()))
             {
                 MessageBox.Show("You already guessed that!");
+                
 
             }
-            //If thr right word is entered
+            //If the right word is entered
            else if (letterBox.Text == rightWord)
             {
+
                 letterBox.Text = rightWord;
                 rightLetter();
-                isIt.Text = "You got it!";
+                MessageBox.Show("You won!");
+                PlayAgain();
+
+
+
             }
-            else if (letterBox.Text.Length > 1 || letterBox.Text.Length <= 0)
+            else if (letterBox.Text.Length > 1 || letterBox.Text.Length <= 0 || !isLetter)
             {
+              
                 MessageBox.Show("One letter or the whole word please!");
             }
             else
@@ -75,10 +75,16 @@ namespace HangMan
                     //isIt.Text = "Yes!";
                 
                     rightLetter();
+                    if (righgtGusses == rightWord.Length)
+                    {
+                        MessageBox.Show("You won!");
+                        PlayAgain();
+                    }
 
                 }
                 else
                 {
+                    wrongGuesses++;
                     guesses.Add(letterBox.Text.ToLower());
                     //isIt.Text = "Nope!";
                     wrongLetter();
@@ -123,15 +129,53 @@ namespace HangMan
                 }
                 letterBox.Focus();
             }
-            //won.Text = rightPlace.ToString();
-            if (rightPlace == rightWord.Length)
+            if (wrongGuesses == 10)
             {
-                //won.Text = "Bingo! You won :)";
+                MessageBox.Show("You lost :(");
+                PlayAgain();
             }
 
-            letterBox.Text = "";
 
-        
+            letterBox.Text = "";       
+        }
+
+        private void SetUpGame()
+        {
+            this.Width = 600;
+            this.Height = 600;
+
+            word = new Word();
+            rightWord = word.word.ToLower();
+            wrongX = 150.0F;
+            guesses = new List<string>();
+
+            hangMan = new HangManFigures();
+
+            wrongGuesses = 0;
+            righgtGusses = 0;
+            this.BackColor = Color.Bisque;
+            this.AcceptButton = guessLetter;
+            this.Refresh();
+            letterBox.Focus();
+            coun = 0;
+            alph = "abcdefghijklmnopqrstuvwxyz";
+        }
+
+        private void PlayAgain()
+        {
+            string msg = "You want to play again?";
+            string title = "Wanna play?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(msg, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                SetUpGame();
+            }
+            else
+            {
+              
+                this.Close();
+            }
         }
 
         private void rightLetter()
@@ -147,7 +191,6 @@ namespace HangMan
             SolidBrush drawBrush = new SolidBrush(Color.Black);
 
             // Create point for upper-left corner of drawing.
-            //float x = 190.0F;
             float x = 190.0F;
             float y = 335.0F;
             int count = letterBox.Text.Length -1;
@@ -158,8 +201,9 @@ namespace HangMan
             {
                 if (letterBox.Text[count].ToString() == rightWord[i].ToString())
                 {
+                    righgtGusses++;
                     rightPlace++;
-                    //isIt.Text = "Yes its a match!";
+
                     x = (gamePlan.staringPoint) + (i * 40);
                     myGraphics.DrawString(guess[count].ToString(), drawFont, drawBrush, x, y);
                    
@@ -192,6 +236,6 @@ namespace HangMan
 
         }
 
-        static int coun= 0;
+       
     }
 }

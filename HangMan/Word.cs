@@ -32,9 +32,5 @@ namespace HangMan
             word = words[num];
 
         }
-
- 
-
-
     }
 }

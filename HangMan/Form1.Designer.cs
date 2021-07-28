@@ -38,7 +38,6 @@ namespace HangMan
             this.atariCount = new System.Windows.Forms.Label();
             this.nintendoCount = new System.Windows.Forms.Label();
             this.rWord = new System.Windows.Forms.Label();
-            this.isIt = new System.Windows.Forms.Label();
             this.won = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -53,7 +52,7 @@ namespace HangMan
             // 
             this.guessLetter.Location = new System.Drawing.Point(250, 460);
             this.guessLetter.Name = "guessLetter";
-            this.guessLetter.Size = new System.Drawing.Size(75, 23);
+            this.guessLetter.Size = new System.Drawing.Size(70, 23);
             this.guessLetter.TabIndex = 1;
             this.guessLetter.Text = "Guess!";
             this.guessLetter.UseVisualStyleBackColor = true;
@@ -115,14 +114,6 @@ namespace HangMan
             this.rWord.Size = new System.Drawing.Size(0, 15);
             this.rWord.TabIndex = 8;
             // 
-            // isIt
-            // 
-            this.isIt.AutoSize = true;
-            this.isIt.Location = new System.Drawing.Point(118, 36);
-            this.isIt.Name = "isIt";
-            this.isIt.Size = new System.Drawing.Size(0, 15);
-            this.isIt.TabIndex = 9;
-            // 
             // won
             // 
             this.won.AutoSize = true;
@@ -138,7 +129,6 @@ namespace HangMan
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(this.won);
-            this.Controls.Add(this.isIt);
             this.Controls.Add(this.rWord);
             this.Controls.Add(this.nintendoCount);
             this.Controls.Add(this.atariCount);
@@ -169,7 +159,6 @@ namespace HangMan
         private System.Windows.Forms.Label atariCount;
         private System.Windows.Forms.Label nintendoCount;
         private System.Windows.Forms.Label rWord;
-        private System.Windows.Forms.Label isIt;
         private System.Windows.Forms.Label won;
     }
 }
